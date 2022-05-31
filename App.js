@@ -1,12 +1,48 @@
-import React, {Component} from 'react';
-import { render } from 'react-dom';
-import {Platform, StyleSheet, Text, View, Image, TextInput} from 'react-native';
-import HomeScreen from "./scr/screen/HomeScreen.js";
-import Detail from "./scr/screen/Detail.js";
-import Navigation from './scr/navigation/navigation.js';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { ProductsList } from './screens/ProductsList.js';
+import { ProductDetails } from './screens/ProductDetails.js';
+import { Cart } from './screens/Cart.js';
+import { CartIcon } from './components/CartIcon.js';
+import { CartProvider } from './CartContext.js';
 
-export default function App (){
-  return(
-    <Navigation/>
-  )
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Products' component={ ProductsList } 
+          options={({ navigation }) => ({
+            title: 'Buku',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={ navigation }/>
+          })}/>
+          <Stack.Screen name='ProductDetails' component={ ProductDetails } 
+          options={({ navigation }) => ({
+            title: 'Detail Produk',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={ navigation }/>,
+          })} />
+          <Stack.Screen name='Cart' component={ Cart } 
+          options={({ navigation }) => ({
+            title: 'Keranjangku',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={ navigation }/>,
+          })} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </CartProvider>
+  );
 }
+
+const styles = StyleSheet.create({
+  headerTitle: {
+    fontSize: 20,
+  }
+});
+
+export default App;

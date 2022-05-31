@@ -13,11 +13,11 @@ const Tab = createBottomTabNavigator();
 function Navigation() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-      <Tab.Screen name="Loading Page" component={Splash} options={{headerShown:false}} />
-        <Tab.Screen name="Home Screen" component={HomeScreen} options={{headerShown:false}} />
-        <Tab.Screen name="Detail" component={Detail} options={{headerShown:false}} />
-      </Tab.Navigator> 
+      <Stack.Navigator initialRouteName="HomeScreen" >
+        <Stack.Screen name="SplashScreen" component={Splash} options={{headerShown:false}} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Detail" component={Detail} options={{headerShown:false}} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
