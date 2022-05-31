@@ -7,4 +7,6 @@ Andaru Putri Salsabila 119140158<br>
 Hendamia Yohana Semiring 119140178<br>
 <br>
 Nama Aplikasi Literasearch (diambil dari kata literasi, itera, dan search <br>
-Aplikasi ini dibuat untuk menampilkan detail buku dan juga menjadi tempat untuk pembelian buku.
+Aplikasi ini dibuat untuk menampilkan detail buku dan juga menjadi tempat untuk pembelian buku.<br>
+Tampilan Aplikasi : <br>
+
