@@ -11,7 +11,7 @@ export default function HomeScreen ({navigation}) {
                 <TextInput placeholder="Search Book..." style={styles.search}/>
               </View>
               <View style={styles.judulbox}>
-                <Text style={{fontSize: 24, fontFamily: 'Pacifio', fontWeight:1000}}>
+                <Text style={{fontSize: 24, fontFamily: 'Pacifico-Regular', fontWeight:1000}}>
                 Literasearch
                 </Text>
                 <Text>Cari bukumu disini</Text>
